@@ -1,35 +1,83 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>二维码扫描展示</title>
-  <script src="https://unpkg.com/html5-qrcode"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-Waste Awareness</title>
   <style>
-    body { font-family: sans-serif; text-align: center; padding: 20px; }
-    #reader { width: 300px; margin: auto; }
-    #result { margin-top: 20px; font-size: 18px; color: green; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #2b6777;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #2b6777;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
+    }
+    .model-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      max-width: 700px;
+      height: 400px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #ddd;
+      font-size: 14px;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
-  <h1>扫码查看信息</h1>
-  <div id="reader"></div>
-  <div id="result">等待扫码...</div>
 
-  <script>
-    const resultDiv = document.getElementById('result');
+  <header>
+    <h1>Understanding E-Waste</h1>
+    <p>Reduce, Reuse, Recycle – Save Our Environment</p>
+  </header>
 
-    function onScanSuccess(decodedText, decodedResult) {
-      resultDiv.innerText = `扫描结果：${decodedText}`;
-      html5QrcodeScanner.clear(); // 停止扫描
-    }
+  <section>
+    <h2>📐 Model Design</h2>
+    <p>Explore the flow of electronic waste from households to recycling facilities through the model below:</p>
+    <div class="model-container">
+      <!-- 替换下面链接为你自己的模型链接，如Sketchfab、YouTube、三维模型等 -->
+      <iframe src="https://www.youtube.com/embed/8Jycj3xbWc4" allowfullscreen></iframe>
+    </div>
+  </section>
 
-    const html5QrcodeScanner = new Html5QrcodeScanner(
-      "reader",
-      { fps: 10, qrbox: 250 },
-      false
-    );
-    html5QrcodeScanner.render(onScanSuccess);
-  </script>
+  <section>
+    <h2>📘 Information on E-Waste</h2>
+    <p>E-waste refers to discarded electronic devices such as phones, computers, and TVs. Improper disposal of e-waste leads to pollution and health hazards due to toxic substances like lead, mercury, and cadmium.</p>
+    <ul>
+      <li>♻️ <strong>Recycle:</strong> Find local e-waste recycling centers.</li>
+      <li>💡 <strong>Reduce:</strong> Avoid frequent upgrades; repair devices when possible.</li>
+      <li>🔄 <strong>Reuse:</strong> Donate or resell functioning electronics.</li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2025 E-Waste Awareness Project | Designed for Educational Purposes
+  </footer>
+
 </body>
 </html>
